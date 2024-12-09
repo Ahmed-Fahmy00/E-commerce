@@ -26,9 +26,7 @@ public class Main {
                 case 2:
                     CustomerService.signupCustomer();
                     break;
-                case 3:
-                    System.out.println("Exiting... Goodbye!");
-                    return;
+
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
