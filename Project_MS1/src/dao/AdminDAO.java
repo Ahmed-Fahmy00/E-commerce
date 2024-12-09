@@ -43,5 +43,9 @@ public class AdminDAO {
         return null;
     }
 
+    public static void addAdmin(Admin admin) {
+        if (findAdminByUsername(admin.getUsername()) == null) {
+            database.Database.add(Database.admins, admin);
+        }
+    }
 }
-
