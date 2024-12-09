@@ -19,6 +19,17 @@ public class Main {
             int choice = scanner.nextInt();
             scanner.nextLine();
 
+            switch (choice) {
+                case 1:
+                    CustomerService.login();
+                    break;
+                case 2:
+                    CustomerService.signupCustomer();
+                    break;
+
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
 
         }
     }
