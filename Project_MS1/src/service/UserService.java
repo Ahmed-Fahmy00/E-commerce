@@ -25,6 +25,7 @@ public class UserService {
                 if (customer.getPassword().equals(password)) {
                     System.out.println("Login successful. Welcome, " + customer.getUsername() + "!");
                     CustomerService.customerMenu(customer);
+                    break;
                 } else {
                     System.out.println("Error: Invalid password. Please try again.");
                     continue;
@@ -39,7 +40,7 @@ public class UserService {
                 if (admin.getPassword().equals(password)) {
                     System.out.println("Login successful. Welcome, Admin " + admin.getUsername() + "!");
                     AdminService.adminMenu();
-                }else {
+                } else {
                     System.out.println("Error: Invalid password. Please try again.");
                     continue;
                 }

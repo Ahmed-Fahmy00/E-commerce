@@ -2,14 +2,12 @@ package main;
 
 import service.CustomerService;
 import service.UserService;
-import test.TestCases;
 
 import java.util.Scanner;
 
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
-        TestCases.te();
         MainMenu();
     }
     public static void MainMenu() {

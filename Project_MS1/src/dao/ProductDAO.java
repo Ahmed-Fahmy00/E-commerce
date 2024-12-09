@@ -68,8 +68,9 @@ public class ProductDAO {
             return;
         }
         System.out.println("All Products:");
+        int i = 1;
         for (Product product : Database.products) {
-            System.out.println(product);
+            System.out.println(i +"-"+product.getName());
         }
     }
 }
