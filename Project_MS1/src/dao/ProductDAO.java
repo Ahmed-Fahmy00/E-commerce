@@ -5,10 +5,11 @@ import database.Database;
 
 public class ProductDAO {
 
-    public void addProduct(int productId, String name, double price, String categoryName) {
-        Product newProduct = new Product(productId, name, price, categoryName);
-        Database.products.add(newProduct);
-        System.out.println("Product added successfully: " + newProduct);
+    public static void addProduct(Product product) {
+        if (findProductById(product.getProductId())==null){
+            Database.products.add(product);
+            System.out.println("Product added successfully: " + product);
+        }
     }
 
     public void updateProduct(int id, String newName, double newPrice, String newCategory) {
@@ -36,7 +37,7 @@ public class ProductDAO {
         System.out.println("Product not found with ID: " + id);
     }
 
-    public Product findProductById(int id) {
+    public static Product findProductById(int id) {
         for (Product product : Database.products) {
             if (product != null && product.getProductId() == id) {
                 return product;
