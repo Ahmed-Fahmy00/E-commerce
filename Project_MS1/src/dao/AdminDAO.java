@@ -1,20 +1,21 @@
 package dao;
 
 import entity.Customer;
-
 import static database.Database.customers;
 
 public class AdminDAO {
     public boolean createUser(Customer customer) {
         if (getCustomerByUsername(customer.getUsername()) == null) {
-            return database.Database.add(customers, customer);
+            database.Database.add(customers, customer);
+            return true;
         }
         return false;
     }
     public boolean deleteUser(String username) {
         Customer customer = getCustomerByUsername(username);
         if (customer != null) {
-            return database.Database.remove(customers, customer); // Use remove utility
+            database.Database.remove(customers, customer); // Use remove utility
+            return true;
         }
         return false;
     }

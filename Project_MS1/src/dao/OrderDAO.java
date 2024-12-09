@@ -3,17 +3,16 @@ package dao;
 import database.Database;
 import entity.Order;
 import entity.Product;
+
+import java.util.ArrayList;
 import java.util.List;
 import static database.Database.orders;
 
 public class OrderDAO {
 
     public void createOrder(Order order) {
-        if (Database.add(orders, order)) {
-            System.out.println("Order created successfully with ID: " + order.getOrderId());
-        } else {
-            System.out.println("Failed to create order. Database might be full.");
-        }
+        Database.orders.add(order);
+        System.out.println("Order created successfully with ID: " + order.getOrderId());
     }
 
     public double calculateTotalAmount(Order order) {
@@ -26,8 +25,7 @@ public class OrderDAO {
     }
 
     public void addProductToOrder(Order order, Product product) {
-        List<Product> products = order.getProducts();
-        products.add(product);
+        order.getProducts().add(product);
         calculateTotalAmount(order);
         System.out.println("Product added to order. Updated total: " + order.getTotalAmount());
     }
@@ -44,7 +42,7 @@ public class OrderDAO {
     }
 
     public void deleteOrder(Order order) {
-        if (Database.remove(orders, order)) {
+        if (Database.orders.remove(order)) {
             System.out.println("Order deleted successfully with ID: " + order.getOrderId());
         } else {
             System.out.println("Failed to delete order. Order not found.");
@@ -52,7 +50,7 @@ public class OrderDAO {
     }
 
     public Order findOrderById(int orderId) {
-        for (Order order : orders) {
+        for (Order order : Database.orders) {
             if (order != null && order.getOrderId() == orderId) {
                 return order;
             }
@@ -60,4 +58,29 @@ public class OrderDAO {
         System.out.println("Order not found with ID: " + orderId);
         return null;
     }
+
+    public static void displayAllOrders() {
+        if (Database.orders.isEmpty()) {
+            System.out.println("No orders found.");
+            return;
+        }
+        System.out.println("All Orders:");
+        for (Order order : Database.orders) {
+            System.out.println(order);
+        }
+    }
+
+    public List<Order> findOrdersByCustomerId(int customerId) {
+        List<Order> customerOrders = new ArrayList<>();
+        for (Order order : Database.orders) {
+            if (order != null && order.getCustomerId() == customerId) {
+                customerOrders.add(order);
+            }
+        }
+        if (customerOrders.isEmpty()) {
+            System.out.println("No orders found for customer ID: " + customerId);
+        }
+        return customerOrders;
+    }
+
 }
