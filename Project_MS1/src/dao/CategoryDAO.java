@@ -8,7 +8,7 @@ public class CategoryDAO {
 
     public void addCategory(int id, String name) {
         Category newCategory = new Category(id, name);
-        categories.add(newCategory); // ArrayList automatically resizes
+        categories.add(newCategory);
         System.out.println("Category added successfully.");
     }
 
@@ -27,7 +27,7 @@ public class CategoryDAO {
         for (int i = 0; i < categories.size(); i++) {
             Category category = categories.get(i);
             if (category != null && category.getId() == id) {
-                categories.remove(i); // Remove the category from the list
+                categories.remove(i);
                 System.out.println("Category deleted successfully.");
                 return;
             }
@@ -36,6 +36,6 @@ public class CategoryDAO {
     }
 
     public ArrayList<Category> getAllCategories() {
-        return new ArrayList<>(categories); // Return a copy of the list
+        return new ArrayList<>(categories);
     }
 }

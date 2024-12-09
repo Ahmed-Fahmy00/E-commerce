@@ -1,5 +1,6 @@
 package service;
 
+import dao.CustomerDAO;
 import entity.Customer;
 import entity.Gender;
 import java.util.Date;
@@ -8,32 +9,9 @@ import static database.Database.customers;
 
 public class CustomerService {
     private static Scanner scanner = new Scanner(System.in);
-    public static void login() {
-        while (true) {
-            System.out.print("Enter username: ");
-            String username = scanner.nextLine();
 
-            Customer customer = findCustomerByUsername(username);
-            if (customer == null) {
-                System.out.println("Error: Username does not exist. Please try again.");
-                continue;
-            }
-
-            System.out.print("Enter password: ");
-            String password = scanner.nextLine();
-
-            if (!customer.getPassword().equals(password)) {
-                System.out.println("Error: Invalid password. Please try again.");
-                continue;
-            }
-
-            customer.login();
-            customerMenu(customer);
-            return;
-        }
-    }
     public static void signupCustomer() {
-        Customer customer = new Customer("Temp", "Temp", "Temp", "temp@example.com", Gender.MALE, "Temp123@", "Customer", "Temp", "1234567890", "Temp", new Date());
+        Customer customer = new Customer();
 
         while (true) {
             try {
@@ -44,7 +22,6 @@ public class CustomerService {
                 System.out.println("Error: " + e.getMessage());
             }
         }
-
         while (true) {
             try {
                 System.out.print("Enter last name: ");
@@ -54,17 +31,20 @@ public class CustomerService {
                 System.out.println("Error: " + e.getMessage());
             }
         }
-
         while (true) {
             try {
                 System.out.print("Enter username: ");
-                customer.setUsername(scanner.nextLine());
+                String username = scanner.nextLine();
+                if (CustomerDAO.findCustomerByUsername(username) != null) {
+                    System.out.println("Username already exists. Please choose a different username.");
+                    continue;
+                }
+                customer.setUsername(username);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println("Error: " + e.getMessage());
             }
         }
-
         while (true) {
             try {
                 System.out.print("Enter email: ");
@@ -74,7 +54,6 @@ public class CustomerService {
                 System.out.println("Error: " + e.getMessage());
             }
         }
-
         while (true) {
             try {
                 System.out.print("Enter password: ");
@@ -84,7 +63,6 @@ public class CustomerService {
                 System.out.println("Error: " + e.getMessage());
             }
         }
-
         while (true) {
             try {
                 System.out.print("Enter gender (MALE/FEMALE): ");
@@ -94,7 +72,6 @@ public class CustomerService {
                 System.out.println("Error: Please enter a valid gender (MALE or FEMALE).");
             }
         }
-
         while (true) {
             try {
                 System.out.print("Enter address: ");
@@ -104,7 +81,6 @@ public class CustomerService {
                 System.out.println("Error: " + e.getMessage());
             }
         }
-
         while (true) {
             try {
                 System.out.print("Enter phone number: ");
@@ -130,66 +106,73 @@ public class CustomerService {
             }
         }
 
-        for (int i = 0; i < customers.length; i++) {
-            if (customers[i] == null) {
-                customers[i] = customer;
-                System.out.println("Signup successful! You can now login.");
-                return;
-            }
+        if (CustomerDAO.addCustomer(customer)) {
+            System.out.println("Signup successful! You can now login.");
+        } else {
+            System.out.println("Signup failed. Database might be full.");
         }
-
-        System.out.println("Customer list is full. Signup failed.");
     }
+
     public static void customerMenu(Customer customer) {
         while (true) {
-            System.out.println("Customer Options:");
+            System.out.println("\n--- Customer Menu ---");
             System.out.println("1. View Personal Information");
             System.out.println("2. Add Balance");
             System.out.println("3. Update Profile");
             System.out.println("4. Logout");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume the newline character
+            scanner.nextLine(); // Consume newline
 
             switch (choice) {
                 case 1:
                     System.out.println(customer);
                     break;
                 case 2:
-                    while (true) {
-                        try {
-                            System.out.print("Enter amount to add: ");
-                            double amount = scanner.nextDouble();
-                            scanner.nextLine(); // Consume the newline character
-                            customer.addBalance(amount);
-                            System.out.println("Balance updated!");
-                            break;
-                        } catch (IllegalArgumentException e) {
-                            System.out.println("Error: " + e.getMessage());
-                        }
-                    }
+                    addBalance(customer);
                     break;
                 case 3:
-                    System.out.print("Enter first name: ");
-                    String firstname = scanner.nextLine();
-                    System.out.print("Enter last name: ");
-                    String lastname = scanner.nextLine();
-                    System.out.print("Enter address: ");
-                    String address = scanner.nextLine();
-                    System.out.print("Enter phone: ");
-                    String phone = scanner.nextLine();
-                    System.out.print("Enter shipping address: ");
-                    String shippingAddress = scanner.nextLine();
-                    customer.updateProfile(firstname, lastname, address, phone, shippingAddress);
-                    System.out.println("Profile updated!");
+                    updateProfile(customer);
                     break;
                 case 4:
-                    customer.logout();
+                    System.out.println("You have successfully logged out.");
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
         }
     }
+
+    private static void addBalance(Customer customer) {
+        while (true) {
+            try {
+                System.out.print("Enter amount to add: ");
+                double amount = scanner.nextDouble();
+                scanner.nextLine(); // Consume newline
+                customer.addBalance(amount);
+                System.out.println("Balance updated successfully!");
+                return;
+            } catch (IllegalArgumentException e) {
+                System.out.println("Error: " + e.getMessage());
+            }
+        }
+    }
+
+    private static void updateProfile(Customer customer) {
+        System.out.print("Enter first name: ");
+        String firstName = scanner.nextLine();
+        System.out.print("Enter last name: ");
+        String lastName = scanner.nextLine();
+        System.out.print("Enter address: ");
+        String address = scanner.nextLine();
+        System.out.print("Enter phone: ");
+        String phone = scanner.nextLine();
+        System.out.print("Enter shipping address: ");
+        String shippingAddress = scanner.nextLine();
+
+        customer.updateProfile(firstName, lastName, address, phone, shippingAddress);
+        System.out.println("Profile updated successfully!");
+    }
+
 
 }

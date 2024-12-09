@@ -1,7 +1,6 @@
 package entity;
 
 import service.UserActions;
-
 import java.util.Date;
 
 abstract public class User implements UserActions {

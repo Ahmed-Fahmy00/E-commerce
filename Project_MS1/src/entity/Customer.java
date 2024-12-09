@@ -5,11 +5,19 @@ import java.util.Date;
 public class Customer extends User {
     private String shippingAddress;
     private double balance;
+    private static int counter=0;
+    private int id;
+    public Customer() {
+        super();
+        this.balance = 0.0; // Initialize balance to 0
 
+        this.id= counter++;
+    }
     public Customer(String firstname, String lastname, String username, String email, Gender gender, String password, String role, String address, String phone, String shippingAddress, Date dateOfBirth) {
         super(firstname, lastname, username, email, gender, password, "Customer", address, phone, dateOfBirth);
         this.shippingAddress = shippingAddress;
-        this.balance = 0.0; // Initialize balance to 0
+        this.balance = 0.0; // Initialize balance to
+        this.id= counter++;
     }
 
     public String getShippingAddress() { return shippingAddress; }
@@ -47,17 +55,7 @@ public class Customer extends User {
                 "\n--------------------------------------";
     }
 
-    @Override
-    public void login() {
-        System.out.println("Customer " + getUsername() + " logged in.");
-    }
-
-    @Override
-    public void logout() {
-        System.out.println("Customer " + getUsername() + " logged out.");
-    }
-
     public int getId() {
-
+        return id;
     }
 }

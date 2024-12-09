@@ -1,6 +1,7 @@
 package main;
 
 import service.CustomerService;
+import service.UserService;
 
 import java.util.Scanner;
 
@@ -21,18 +22,17 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    CustomerService.login();
+                    UserService.login();
                     break;
                 case 2:
                     CustomerService.signupCustomer();
                     break;
                 case 3:
-                    System.out.println("Exiting... Goodbye!");
-                    return;
+                    System.out.println("Exiting...");
+                    System.exit(0);
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
-
         }
     }
 }
