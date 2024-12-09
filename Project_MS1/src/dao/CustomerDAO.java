@@ -7,7 +7,11 @@ import entity.Customer;
 public class CustomerDAO {
 
     public static boolean addCustomer(Customer customer) {
-        if (findCustomerByUsername(customer.getUsername()) != null) {
+        if (customer == null || customer.getUsername() == null) {
+            System.out.println("Error: Customer or username cannot be null.");
+            return false;
+        }
+        if (findCustomerByUsername(customer.getUsername()) == null) {
             Database.customers.add(customer);
             System.out.println("Customer added successfully.");
             return true;
@@ -15,6 +19,7 @@ public class CustomerDAO {
         System.out.println("Customer with the given username already exists.");
         return false;
     }
+
 
     public static Customer findCustomerByUsername(String username) {
         for (int i = 0; i < Database.customers.size(); i++) {

@@ -3,12 +3,11 @@ package service;
 import dao.CustomerDAO;
 import entity.Customer;
 import entity.Gender;
-import java.util.Date;
 import java.util.Scanner;
-import static database.Database.customers;
+import static service.ProductService;
 
 public class CustomerService {
-    private static Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
 
     public static void signupCustomer() {
         Customer customer = new Customer();
@@ -119,7 +118,9 @@ public class CustomerService {
             System.out.println("1. View Personal Information");
             System.out.println("2. Add Balance");
             System.out.println("3. Update Profile");
-            System.out.println("4. Logout");
+            System.out.println("4. View Products");
+            System.out.println("5. View Cart");
+            System.out.println("6. Logout");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -135,6 +136,12 @@ public class CustomerService {
                     updateProfile(customer);
                     break;
                 case 4:
+                    ProductService.productmenu();
+                    break;
+                case 5:
+                    viewCart(customer);
+                    break;
+                case 6:
                     System.out.println("You have successfully logged out.");
                     return;
                 default:
@@ -173,6 +180,5 @@ public class CustomerService {
         customer.updateProfile(firstName, lastName, address, phone, shippingAddress);
         System.out.println("Profile updated successfully!");
     }
-
 
 }

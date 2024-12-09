@@ -6,9 +6,11 @@ import database.Database;
 public class ProductDAO {
 
     public static void addProduct(Product product) {
-        if (findProductById(product.getProductId())==null){
+        if (findProductById(product.getProductId()) == null) {
             Database.products.add(product);
             System.out.println("Product added successfully: " + product);
+        } else {
+            System.out.println("Product with ID " + product.getProductId() + " already exists.");
         }
     }
 
@@ -39,12 +41,11 @@ public class ProductDAO {
 
     public static Product findProductById(int id) {
         for (Product product : Database.products) {
-            if (product != null && product.getProductId() == id) {
-                return product;
+            if (product.getProductId() == id) {
+                return product; // Product found
             }
         }
-        System.out.println("Product not found with ID: " + id);
-        return null;
+        return null; // Product not found
     }
 
     public static void findProductsByCategory(String categoryName) {
@@ -67,8 +68,9 @@ public class ProductDAO {
             return;
         }
         System.out.println("All Products:");
+        int i = 1;
         for (Product product : Database.products) {
-            System.out.println(product);
+            System.out.println(i +"-"+product.getName());
         }
     }
 }
