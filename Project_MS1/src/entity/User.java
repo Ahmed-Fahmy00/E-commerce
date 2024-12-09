@@ -59,9 +59,9 @@ abstract public class User implements UserActions {
         return dateOfBirth;
     }
 
-    public void setFirstName(String name) {
+    public void setFirstName(String firstname) {
         if (!firstname.matches("[A-Za-z]+")) {
-            throw new IllegalArgumentException("Firstname must contain alphabets only.");
+            throw new IllegalArgumentException("Lastname must contain alphabets only.");
         }
         this.firstname = firstname;
     }

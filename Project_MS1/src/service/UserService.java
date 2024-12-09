@@ -17,20 +17,6 @@ public class UserService {
             System.out.print("Enter username: ");
             String username = scanner.nextLine();
 
-            Admin admin = AdminDAO.findAdminByUsername(username);
-            if (admin != null) {
-                System.out.print("Enter password: ");
-                String password = scanner.nextLine();
-
-                if (admin.getPassword().equals(password)) {
-                    System.out.println("Login successful. Welcome, Admin " + admin.getUsername() + "!");
-                    AdminService.adminMenu();
-                }else {
-                    System.out.println("Error: Invalid password. Please try again.");
-                    continue;
-                }
-            }
-
             Customer customer = CustomerDAO.findCustomerByUsername(username);
             if (customer != null) {
                 System.out.print("Enter password: ");
@@ -40,6 +26,20 @@ public class UserService {
                     System.out.println("Login successful. Welcome, " + customer.getUsername() + "!");
                     CustomerService.customerMenu(customer);
                 } else {
+                    System.out.println("Error: Invalid password. Please try again.");
+                    continue;
+                }
+            }
+
+            Admin admin = AdminDAO.findAdminByUsername(username);
+            if (admin != null) {
+                System.out.print("Enter password: ");
+                String password = scanner.nextLine();
+
+                if (admin.getPassword().equals(password)) {
+                    System.out.println("Login successful. Welcome, Admin " + admin.getUsername() + "!");
+                    AdminService.adminMenu();
+                }else {
                     System.out.println("Error: Invalid password. Please try again.");
                     continue;
                 }
