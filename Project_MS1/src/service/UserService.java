@@ -17,14 +17,17 @@ public class UserService {
             System.out.print("Enter username: ");
             String username = scanner.nextLine();
 
+            boolean userFound = false;
             Customer customer = CustomerDAO.findCustomerByUsername(username);
             if (customer != null) {
+                userFound = true;
                 System.out.print("Enter password: ");
                 String password = scanner.nextLine();
 
                 if (customer.getPassword().equals(password)) {
                     System.out.println("Login successful. Welcome, " + customer.getUsername() + "!");
                     CustomerService.customerMenu(customer);
+                    return;
                 } else {
                     System.out.println("Error: Invalid password. Please try again.");
                     continue;
@@ -33,20 +36,26 @@ public class UserService {
 
             Admin admin = AdminDAO.findAdminByUsername(username);
             if (admin != null) {
+                userFound = true;
                 System.out.print("Enter password: ");
                 String password = scanner.nextLine();
 
                 if (admin.getPassword().equals(password)) {
                     System.out.println("Login successful. Welcome, Admin " + admin.getUsername() + "!");
                     AdminService.adminMenu();
-                }else {
+                    return;
+                } else {
                     System.out.println("Error: Invalid password. Please try again.");
                     continue;
                 }
             }
-            System.out.println("Error: Username does not exist. Please try again.");
+
+            if (!userFound) {
+                System.out.println("Error: Username does not exist. Please try again.");
+            }
         }
     }
+
 
     public void logout() {
         System.out.println("You have been logged out successfully.");
