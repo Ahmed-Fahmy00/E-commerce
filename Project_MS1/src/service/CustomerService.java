@@ -191,12 +191,5 @@ public class CustomerService {
             }
         }
     }
-    private static Customer findCustomerByUsername(String username) {
-        for (int i = 0; i < customers.length; i++) {
-            if (customers[i] != null && customers[i].getUsername().equals(username)) {
-                return customers[i];
-            }
-        }
-        return null;
-    }
+
 }

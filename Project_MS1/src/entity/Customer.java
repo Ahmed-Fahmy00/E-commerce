@@ -56,4 +56,8 @@ public class Customer extends User {
     public void logout() {
         System.out.println("Customer " + getUsername() + " logged out.");
     }
+
+    public int getId() {
+
+    }
 }

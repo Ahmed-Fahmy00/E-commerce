@@ -56,5 +56,9 @@ public class Order {
     public void setPaymentMethod(PaymentMethod paymentMethod) {
         this.paymentMethod = paymentMethod;
     }
+
+    public int getCustomerId() {
+        return customer.getId();
+    }
 }
 

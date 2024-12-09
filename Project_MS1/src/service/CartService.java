@@ -3,6 +3,7 @@ package service;
 import entity.Cart;
 
 public class CartService {
+
     public void displayCart(Cart cart) {
         System.out.println("Cart ID: " + cart.getCartId());
         System.out.println("Customer: " + cart.getCustomer().getFirstnameName() + " " + cart.getCustomer().getLastnameName());

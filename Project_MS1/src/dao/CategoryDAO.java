@@ -1,22 +1,19 @@
 package dao;
 
 import entity.Category;
+import java.util.ArrayList;
 import static database.Database.categories;
 
 public class CategoryDAO {
 
     public void addCategory(int id, String name) {
-        boolean added = database.Database.add(categories, new Category(id, name));
-        if (added) {
-            System.out.println("Category added successfully.");
-        } else {
-            System.out.println("Failed to add category: Array is full.");
-        }
+        Category newCategory = new Category(id, name);
+        categories.add(newCategory); // ArrayList automatically resizes
+        System.out.println("Category added successfully.");
     }
 
     public void updateCategory(int id, String newName) {
-        for (int i = 0; i < categories.length; i++) {
-            Category category = categories[i];
+        for (Category category : categories) {
             if (category != null && category.getId() == id) {
                 category.setName(newName);
                 System.out.println("Category updated successfully.");
@@ -27,13 +24,18 @@ public class CategoryDAO {
     }
 
     public void deleteCategory(int id) {
-        for (int i = 0; i < categories.length; i++) {
-            if (categories[i] != null && categories[i].getId() == id) {
-                categories[i] = null; // Set the array element to null
+        for (int i = 0; i < categories.size(); i++) {
+            Category category = categories.get(i);
+            if (category != null && category.getId() == id) {
+                categories.remove(i); // Remove the category from the list
                 System.out.println("Category deleted successfully.");
                 return;
             }
         }
         System.out.println("Category not found.");
+    }
+
+    public ArrayList<Category> getAllCategories() {
+        return new ArrayList<>(categories); // Return a copy of the list
     }
 }
