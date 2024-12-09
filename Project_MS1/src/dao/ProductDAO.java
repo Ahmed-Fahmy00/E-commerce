@@ -4,6 +4,7 @@ import entity.Product;
 import database.Database;
 
 public class ProductDAO {
+
     public void addProduct(int productId, String name, double price, String categoryName) {
         Product newProduct = new Product(productId, name, price, categoryName);
         Database.products.add(newProduct);
@@ -23,7 +24,7 @@ public class ProductDAO {
         System.out.println("Product not found with ID: " + id);
     }
 
-    public void deleteProduct(int id) {
+    public static void deleteProduct(int id) {
         for (int i = 0; i < Database.products.size(); i++) {
             Product product = Database.products.get(i);
             if (product != null && product.getProductId() == id) {
@@ -34,6 +35,7 @@ public class ProductDAO {
         }
         System.out.println("Product not found with ID: " + id);
     }
+
     public Product findProductById(int id) {
         for (Product product : Database.products) {
             if (product != null && product.getProductId() == id) {
@@ -44,7 +46,7 @@ public class ProductDAO {
         return null;
     }
 
-    public void findProductsByCategory(String categoryName) {
+    public static void findProductsByCategory(String categoryName) {
         boolean found = false;
         System.out.println("Products in category: " + categoryName);
         for (Product product : Database.products) {

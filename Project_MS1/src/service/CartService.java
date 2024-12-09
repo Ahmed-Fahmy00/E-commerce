@@ -13,6 +13,7 @@ public class CartService {
         }
         System.out.println("Total: " + calculateTotal(cart));
     }
+
     public double calculateTotal(Cart cart) {
         double total = 0;
         for (int i = 0; i < cart.getProducts().size(); i++) {
@@ -20,4 +21,5 @@ public class CartService {
         }
         return total;
     }
+
 }

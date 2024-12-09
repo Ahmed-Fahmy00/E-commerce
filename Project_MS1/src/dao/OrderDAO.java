@@ -41,7 +41,7 @@ public class OrderDAO {
         }
     }
 
-    public void deleteOrder(Order order) {
+    public static void deleteOrder(Order order) {
         if (Database.orders.remove(order)) {
             System.out.println("Order deleted successfully with ID: " + order.getOrderId());
         } else {
@@ -49,7 +49,7 @@ public class OrderDAO {
         }
     }
 
-    public Order findOrderById(int orderId) {
+    public static Order findOrderById(int orderId) {
         for (Order order : Database.orders) {
             if (order != null && order.getOrderId() == orderId) {
                 return order;
@@ -70,7 +70,7 @@ public class OrderDAO {
         }
     }
 
-    public List<Order> findOrdersByCustomerId(int customerId) {
+    public static List<Order> findOrdersByCustomerId(int customerId) {
         List<Order> customerOrders = new ArrayList<>();
         for (Order order : Database.orders) {
             if (order != null && order.getCustomerId() == customerId) {

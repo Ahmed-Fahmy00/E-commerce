@@ -6,7 +6,7 @@ import entity.Customer;
 
 public class CustomerDAO {
 
-    public boolean addCustomer(Customer customer) {
+    public static boolean addCustomer(Customer customer) {
         if (findCustomerByUsername(customer.getUsername()) != null) {
             Database.customers.add(customer);
             System.out.println("Customer added successfully.");
@@ -16,7 +16,7 @@ public class CustomerDAO {
         return false;
     }
 
-    public Customer findCustomerByUsername(String username) {
+    public static Customer findCustomerByUsername(String username) {
         for (int i = 0; i < Database.customers.size(); i++) {
             Customer customer = Database.customers.get(i);
             if (customer != null && customer.getUsername().equals(username)) {
@@ -26,7 +26,7 @@ public class CustomerDAO {
         return null;
     }
 
-    public boolean updateCustomer(String username, Customer updatedCustomer) {
+    public static boolean updateCustomer(String username, Customer updatedCustomer) {
         for (int i = 0; i < Database.customers.size(); i++) {
             Customer existingCustomer = Database.customers.get(i);
             if (existingCustomer != null && existingCustomer.getUsername().equals(username)) {
@@ -39,7 +39,7 @@ public class CustomerDAO {
         return false;
     }
 
-    public boolean deleteCustomer(String username) {
+    public static boolean deleteCustomer(String username) {
         for (Customer customer : Database.customers) {
             if (customer != null && customer.getUsername().equals(username)) {
                 Database.customers.remove(customer);
