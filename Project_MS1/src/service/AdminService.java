@@ -1,14 +1,15 @@
 package service;
 
 import dao.*;
+import entity.Customer;
 import entity.Order;
-
+import entity.Product;
+import main.Main;
 import java.util.Scanner;
 
-import static main.Main.MainMenu;
 
 public class AdminService {
-
+    static Scanner scanner = new Scanner(System.in);
     public static void adminMenu() {
         final Scanner scanner = new Scanner(System.in);
         while (true) {
@@ -17,16 +18,17 @@ public class AdminService {
             System.out.println("2. View All Customers");
             System.out.println("3. View All Products");
             System.out.println("4. View All Orders");
-            System.out.println("5. Remove Customer by Username");
-            System.out.println("6. Remove Product by ID");
-            System.out.println("7. Remove Order by ID");
-            System.out.println("8. View Products by Category");
-            System.out.println("9. Exit");
+            System.out.println("5. View Products by Category");
+            System.out.println("6. Create new Product");
+            System.out.println("7. Create new Customer");
+            System.out.println("8. Remove Customer by Username");
+            System.out.println("9. Remove Product by ID");
+            System.out.println("10. Remove Order by ID");
+            System.out.println("11. Exit");
 
             System.out.print("\nChoose an option: ");
             int choice = scanner.nextInt();
-            scanner.nextLine();  // Consume the newline character left by nextInt()
-
+            scanner.nextLine();
             switch (choice) {
                 case 1:
                     viewAllEntities();
@@ -41,28 +43,33 @@ public class AdminService {
                     viewAllOrders();
                     break;
                 case 5:
-                    System.out.print("Enter username to remove: ");
-                    String username = scanner.nextLine();
-                    removeCustomerByUsername(username);
-                    break;
-                case 6:
-                    System.out.print("Enter product ID to remove: ");
-                    int productId = scanner.nextInt();
-                    removeProductById(productId);
-                    break;
-                case 7:
-                    System.out.print("Enter order ID to remove: ");
-                    int orderId = scanner.nextInt();
-                    removeOrderById(orderId);
-                    break;
-                case 8:
                     System.out.print("Enter category name to view products: ");
                     String categoryName = scanner.nextLine();
                     viewProductsByCategory(categoryName);
                     break;
+                case 6:
+                    createNewProduct();
+                    break;
+                case 7:
+                    createNewCustomer();
+                    break;
+                case 8:
+                    System.out.print("Enter username to remove: ");
+                    String username = scanner.nextLine();
+                    removeCustomerByUsername(username);
+                    break;
                 case 9:
+                    System.out.print("Enter product ID to remove: ");
+                    int productId = scanner.nextInt();
+                    removeProductById(productId);
+                    break;
+                case 10:
+                    System.out.print("Enter order ID to remove: ");
+                    int orderId = scanner.nextInt();
+                    removeOrderById(orderId);
+                case 11:
                     System.out.println("Exiting Admin Menu.");
-                    MainMenu();
+                    Main.MainMenu();
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }
@@ -92,11 +99,9 @@ public class AdminService {
             System.out.println("Customer with username '" + username + "' not found.");
         }
     }
-
     public static void removeProductById(int productId) {
         ProductDAO.deleteProduct(productId);
     }
-
     public static void removeOrderById(int orderId) {
         Order order = OrderDAO.findOrderById(orderId);
         if (order != null) {
@@ -109,6 +114,43 @@ public class AdminService {
     public static void viewProductsByCategory(String categoryName) {
         System.out.println("Displaying Products in Category: " + categoryName);
         ProductDAO.findProductsByCategory(categoryName);
+    }
+
+    public static void createNewProduct() {
+        System.out.println("Enter the details of the New Product to be added: ");
+        Product product = new Product();
+
+        System.out.println("Enter Product ID: ");
+        product.setProductId(scanner.nextInt());
+        scanner.nextLine(); // Consume newline character
+
+        System.out.println("Enter Product Name: ");
+        product.setName(scanner.nextLine());
+
+        System.out.println("Enter Product Price: ");
+        product.setPrice(scanner.nextDouble());
+        scanner.nextLine(); // Consume newline character
+
+        System.out.println("Enter Product Category: ");
+        product.setCategory(scanner.nextLine());
+
+        ProductDAO.addProduct(product);
+
+        System.out.println("Product added successfully.");
+    }
+    public static void createNewCustomer() {
+        System.out.println("Enter the details of the New Customer to be added: ");
+        Customer customer = new Customer();
+
+        System.out.println("Enter Customer username: ");
+        customer.setUsername(scanner.nextLine());
+
+        System.out.println("Enter Customer password: ");
+        customer.setPassword(scanner.nextLine());
+
+        CustomerDAO.addCustomer(customer);
+
+        System.out.println("Customer added successfully.");
     }
 
 }
