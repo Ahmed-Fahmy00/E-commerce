@@ -13,7 +13,7 @@ public class Cart {
         this.cartId = countId++;
         this.customer = customer;
         this.products = new ArrayList<>();
-        this.count = new int[0]; // Initialize as empty
+        this.count = new int[0];
     }
 
     public int getCartId() {
@@ -23,7 +23,6 @@ public class Cart {
     public Customer getCustomer() {
         return customer;
     }
-
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
@@ -31,7 +30,6 @@ public class Cart {
     public ArrayList<Product> getProducts() {
         return products;
     }
-
     public void setProducts(ArrayList<Product> products) {
         this.products = products;
     }
@@ -39,8 +37,8 @@ public class Cart {
     public int[] getCount() {
         return count;
     }
-
     public void setCount(int[] count) {
         this.count = count;
     }
+
 }

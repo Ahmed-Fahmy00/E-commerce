@@ -7,6 +7,12 @@ import entity.Product;
 
 public class CartDAO {
 
+    public static Cart createCart(Customer customer) {
+        Cart cart = new Cart(customer);
+        Database.carts.add(cart);
+        return cart;
+    }
+
     public static void displayCart(Cart cart) {
         if (cart.getProducts() == null || cart.getProducts().isEmpty()) {
             System.out.println("Cart is empty.");
@@ -43,14 +49,14 @@ public class CartDAO {
         return null;
     }
 
-    public void clearCart(Cart cart) {
+    public boolean isEmpty(Cart cart) {
+        return cart.getProducts().isEmpty();
+    }
+
+    public static void clearCart(Cart cart) {
         cart.getProducts().clear();
         cart.setCount(new int[Database.products.size()]);
         System.out.println("Cart cleared successfully.");
-    }
-
-    public boolean isEmpty(Cart cart) {
-        return cart.getProducts().isEmpty();
     }
 
     public boolean searchProduct(Cart cart, Product product) {
@@ -88,7 +94,7 @@ public class CartDAO {
         }
     }
 
-    public void removeAllProduct(Cart cart, Product product) {
+    public static void removeAllProduct(Cart cart, Product product) {
         int index = cart.getProducts().indexOf(product);
         if (index != -1) {
             cart.getProducts().remove(index);

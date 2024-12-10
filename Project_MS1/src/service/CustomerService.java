@@ -1,18 +1,10 @@
 package service;
 
-import dao.CartDAO;
 import dao.CustomerDAO;
-import dao.ProductDAO;
 import entity.Cart;
 import entity.Customer;
 import entity.Gender;
 import java.util.Scanner;
-
-import entity.Product;
-import service.ProductService;
-
-import static dao.ProductDAO.addProduct;
-import static dao.ProductDAO.findProductById;
 
 public class CustomerService {
     static Scanner scanner = new Scanner(System.in);
@@ -128,13 +120,12 @@ public class CustomerService {
             System.out.println("2. Add Balance");
             System.out.println("3. Update Profile");
             System.out.println("4. View Products");
-            System.out.println("5. Add Product to Cart");
-            System.out.println("6. Remove Product from Cart");
-            System.out.println("7. View Cart");
-            System.out.println("8. Logout");
+            System.out.println("5. View Cart");
+            System.out.println("6. View Orders");
+            System.out.println("7. Logout");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -147,43 +138,15 @@ public class CustomerService {
                     updateProfile(customer);
                     break;
                 case 4:
-                    viewAllProducts();
+                    ProductService.productmenu(cart);
                     break;
                 case 5:
-                    if (cart == null) {
-                        cart = new Cart(customer); // Initialize cart if not already
-                    }
-                    System.out.print("Enter product ID to add: ");
-                    int productId = scanner.nextInt();
-                    Product product = findProductById(productId);
-                    if (product != null) {
-                        CartDAO.addProduct(cart, product);
-                    } else {
-                        System.out.println("Product not found.");
-                    }
+                    CartService.cartMenu(cart);
                     break;
                 case 6:
-                    if (cart == null) {
-                        System.out.println("Cart is empty.");
-                    } else {
-                        System.out.print("Enter product ID to remove: ");
-                        productId = scanner.nextInt();
-                        product = findProductById(productId);
-                        if (product != null) {
-                            CartDAO.removeOneOfProduct(cart, product);
-                        } else {
-                            System.out.println("Product not found.");
-                        }
-                    }
+                    OrderService.orderMenu(customer);
                     break;
                 case 7:
-                    if (cart == null) {
-                        System.out.println("Cart is empty.");
-                    } else {
-                        CartDAO.displayCart(cart);
-                    }
-                    break;
-                case 8:
                     System.out.println("You have successfully logged out.");
                     return;
                 default:
@@ -222,9 +185,5 @@ public class CustomerService {
         customer.updateProfile(firstName, lastName, address, phone, shippingAddress);
         System.out.println("Profile updated successfully!");
     }
-    public static void viewAllProducts() {
-        ProductDAO.displayAllProducts();
-    }
-
 
 }

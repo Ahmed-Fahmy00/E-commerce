@@ -39,6 +39,13 @@ public class ProductDAO {
         System.out.println("Product not found with ID: " + id);
     }
 
+    public static Product findProductByindex(int index) {
+        if (index > 0 && index <= Database.products.size()) {
+            return Database.products.get(index - 1);
+        }
+        System.out.println("Product not found at index: " + index);
+        return null;
+    }
     public static Product findProductById(int id) {
         for (Product product : Database.products) {
             if (product.getProductId() == id) {
