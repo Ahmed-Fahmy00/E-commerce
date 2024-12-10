@@ -21,8 +21,8 @@ public class TestCases {
         AdminDAO.addAdmin(admin1);
         AdminDAO.addAdmin(admin2);
 
-        Product product1 = new Product(10, "Electronics", 999.99, "Laptop");
-        Product product2 = new Product(20, "Electronics", 499.99, "Smartphone");
+        Product product1 = new Product(10, "Laptop", 999.99, "Electronics");
+        Product product2 = new Product(20, "Smartphone", 499.99, "Electronics");
         ProductDAO.addProduct(product1);
         ProductDAO.addProduct(product2);
 

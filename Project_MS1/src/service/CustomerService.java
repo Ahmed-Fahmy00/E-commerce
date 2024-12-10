@@ -7,6 +7,8 @@ import entity.Cart;
 import entity.Customer;
 import entity.Gender;
 import java.util.Scanner;
+
+import entity.Product;
 import service.ProductService;
 
 import static dao.ProductDAO.addProduct;
@@ -119,6 +121,7 @@ public class CustomerService {
     }
 
     public static void customerMenu(Customer customer) {
+        Cart cart = null; // Initialize the cart outside the loop for persistence
         while (true) {
             System.out.println("\n--- Customer Menu ---");
             System.out.println("1. View Personal Information");
@@ -126,8 +129,9 @@ public class CustomerService {
             System.out.println("3. Update Profile");
             System.out.println("4. View Products");
             System.out.println("5. Add Product to Cart");
-            System.out.println("6. View Cart");
-            System.out.println("7. Logout");
+            System.out.println("6. Remove Product from Cart");
+            System.out.println("7. View Cart");
+            System.out.println("8. Logout");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -146,15 +150,40 @@ public class CustomerService {
                     viewAllProducts();
                     break;
                 case 5:
+                    if (cart == null) {
+                        cart = new Cart(customer); // Initialize cart if not already
+                    }
                     System.out.print("Enter product ID to add: ");
                     int productId = scanner.nextInt();
-                    Cart cart = new Cart(customer);
-                    CartDAO.addProduct(cart, findProductById(productId));
+                    Product product = findProductById(productId);
+                    if (product != null) {
+                        CartDAO.addProduct(cart, product);
+                    } else {
+                        System.out.println("Product not found.");
+                    }
                     break;
                 case 6:
-                    CartDAO.displayCart(cart);
+                    if (cart == null) {
+                        System.out.println("Cart is empty.");
+                    } else {
+                        System.out.print("Enter product ID to remove: ");
+                        productId = scanner.nextInt();
+                        product = findProductById(productId);
+                        if (product != null) {
+                            CartDAO.removeOneOfProduct(cart, product);
+                        } else {
+                            System.out.println("Product not found.");
+                        }
+                    }
                     break;
                 case 7:
+                    if (cart == null) {
+                        System.out.println("Cart is empty.");
+                    } else {
+                        CartDAO.displayCart(cart);
+                    }
+                    break;
+                case 8:
                     System.out.println("You have successfully logged out.");
                     return;
                 default:

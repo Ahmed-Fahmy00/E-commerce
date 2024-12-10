@@ -25,11 +25,9 @@ public class CartDAO {
             Product product = cart.getProducts().get(i);
             int quantity = cart.getCount()[i];
 
-            // Display product details
             System.out.printf("%s - $%.2f x %d = $%.2f%n",
                     product.getName(), product.getPrice(), quantity, product.getPrice() * quantity);
 
-            // Accumulate total cost
             total += product.getPrice() * quantity;
         }
 
@@ -77,7 +75,7 @@ public class CartDAO {
         System.out.println("Product added to the cart.");
     }
 
-    public void removeOneOfProduct(Cart cart, Product product) {
+    public static void removeOneOfProduct(Cart cart, Product product) {
         int index = cart.getProducts().indexOf(product);
         if (index != -1 && cart.getCount()[index] > 1) {
             cart.getCount()[index]--;
