@@ -12,6 +12,7 @@ public class CustomerDAO {
             return false;
         }
         if (findCustomerByUsername(customer.getUsername()) == null) {
+            CartDAO.createCart(customer);
             Database.customers.add(customer);
             System.out.println("Customer added successfully.");
             return true;

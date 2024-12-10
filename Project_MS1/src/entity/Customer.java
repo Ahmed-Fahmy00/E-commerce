@@ -13,7 +13,6 @@ public class Customer extends User {
     public Customer() {
         super();
         this.balance = 0.0;
-        CartDAO.createCart(this);
         this.id= counter++;
     }
     public Customer(String firstname, String lastname, String username, String email, Gender gender, String password, String role, String address, String phone, String shippingAddress, Date dateOfBirth) {

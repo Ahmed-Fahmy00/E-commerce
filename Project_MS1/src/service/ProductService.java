@@ -3,9 +3,7 @@ package service;
 import dao.CartDAO;
 import dao.ProductDAO;
 import entity.Cart;
-import entity.Customer;
 import entity.Product;
-
 import java.util.Scanner;
 
 public class ProductService {
@@ -33,7 +31,7 @@ public class ProductService {
                     }
                     break;
                 case 2:
-                    break;
+                    return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
                     break;

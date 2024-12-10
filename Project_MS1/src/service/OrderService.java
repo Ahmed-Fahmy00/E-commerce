@@ -12,6 +12,7 @@ public class OrderService {
 
     public static void orderMenu(Customer customer) {
         while (true) {
+            displayCustomerOrders(customer.getId());
             System.out.println("\n--- Order Menu ---");
             System.out.println("1. clear Orders");
             System.out.println("2. Exit");
@@ -33,7 +34,7 @@ public class OrderService {
 
     }
 
-    public void displayOrderDetails(Order order) {
+    public static void displayOrderDetails(Order order) {
         if (order == null) {
             System.out.println("Order not found.");
             return;
@@ -48,11 +49,11 @@ public class OrderService {
         System.out.println("Total Amount: " + order.getTotalAmount());
     }
 
-    public void displayAllOrders() {
+    public static void displayAllOrders() {
         OrderDAO.displayAllOrders();
     }
 
-    public void displayCustomerOrders(int customerId) {
+    public static void displayCustomerOrders(int customerId) {
         System.out.println("--- Orders for Customer ID: " + customerId + " ---");
         List<Order> customerOrders = OrderDAO.findOrdersByCustomerId(customerId);
         if (customerOrders == null || customerOrders.isEmpty()) {
