@@ -104,7 +104,7 @@ public class CartDAO {
         }
     }
 
-      public static double calculateTotalAmount(Cart cart) {
+    public static double calculateTotalAmount(Cart cart) {
         double total = 0;
         for (int i = 0; i < cart.getProducts().size(); i++) {
             total += cart.getProducts().get(i).getPrice() * cart.getCount()[i];

@@ -1,5 +1,5 @@
 package entity;
-
+import dao.OrderDAO;
 import java.util.List;
 
 public class Order {
@@ -14,7 +14,7 @@ public class Order {
         this.orderId = count++;
         this.customer = customer;
         this.products = products;
-        this.totalAmount = totalAmount;
+        this.totalAmount = OrderDAO.calculateTotalAmount(this) ;
         this.paymentMethod = paymentMethod;
     }
 

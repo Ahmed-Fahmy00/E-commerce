@@ -1,5 +1,6 @@
 package service;
 
+import dao.CartDAO;
 import dao.CustomerDAO;
 import entity.Cart;
 import entity.Customer;
@@ -113,7 +114,7 @@ public class CustomerService {
     }
 
     public static void customerMenu(Customer customer) {
-        Cart cart = null; // Initialize the cart outside the loop for persistence
+        Cart cart = CartDAO.findCartByCustomer(customer);
         while (true) {
             System.out.println("\n--- Customer Menu ---");
             System.out.println("1. View Personal Information");

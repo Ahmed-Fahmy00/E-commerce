@@ -30,7 +30,7 @@ public class OrderDAO {
         System.out.println("Order created successfully with ID: " + order.getOrderId());
     }
 
-    public double calculateTotalAmount(Order order) {
+    public static double calculateTotalAmount(Order order) {
         double total = 0;
         for (Product product : order.getProducts()) {
             total += product.getPrice();
