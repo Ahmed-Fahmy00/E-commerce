@@ -8,15 +8,32 @@ import entity.Product;
 public class CartDAO {
 
     public static void displayCart(Cart cart) {
-        if (cart.getProducts().isEmpty()) {
+        if (cart.getProducts() == null || cart.getProducts().isEmpty()) {
             System.out.println("Cart is empty.");
             return;
         }
+
+        if (cart.getCount() == null || cart.getProducts().size() != cart.getCount().length) {
+            System.out.println("Cart data is inconsistent. Please check the cart structure.");
+            return;
+        }
+
         System.out.println("Products in Cart:");
+        double total = 0;
+
         for (int i = 0; i < cart.getProducts().size(); i++) {
             Product product = cart.getProducts().get(i);
-            System.out.println(product.getName() + " - " + product.getPrice() + " x " + cart.getCount()[i]);
+            int quantity = cart.getCount()[i];
+
+            // Display product details
+            System.out.printf("%s - $%.2f x %d = $%.2f%n",
+                    product.getName(), product.getPrice(), quantity, product.getPrice() * quantity);
+
+            // Accumulate total cost
+            total += product.getPrice() * quantity;
         }
+
+        System.out.printf("Total: $%.2f%n", total);
     }
 
     public static Cart findCartByCustomer(Customer customer) {
@@ -42,7 +59,7 @@ public class CartDAO {
         return cart.getProducts().contains(product);
     }
 
-    public void addProduct(Cart cart, Product product) {
+    public static void addProduct(Cart cart, Product product) {
         if (cart.getProducts().contains(product)) {
             int index = cart.getProducts().indexOf(product);
             cart.getCount()[index]++;

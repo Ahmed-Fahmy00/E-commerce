@@ -68,9 +68,16 @@ public class ProductDAO {
             return;
         }
         System.out.println("All Products:");
-        int i = 1;
-        for (Product product : Database.products) {
-            System.out.println(i +"-"+product.getName());
+        for (int i = 0; i < Database.products.size(); i++) {
+            Product product = Database.products.get(i);
+            if (product != null) {
+                System.out.printf("%d. ID: %d, Name: %s, Price: $%.2f, Category: %s%n",
+                        i + 1,
+                        product.getProductId(),
+                        product.getName(),
+                        product.getPrice(),
+                        product.getCategory());
+            }
         }
     }
 }

@@ -3,13 +3,13 @@ package entity;
 import java.util.ArrayList;
 
 public class Cart {
-    private int cartId;
+    private int cartId=0;
     private Customer customer;
     private ArrayList<Product> products;
     private int[] count;
 
-    public Cart(int cartId, Customer customer) {
-        this.cartId = cartId;
+    public Cart(Customer customer) {
+        cartId++;
         this.customer = customer;
         this.products = new ArrayList<>(20);
         this.count = new int[20];
@@ -18,10 +18,6 @@ public class Cart {
     public int getCartId() {
         return cartId;
     }
-    public void setCartId(int cartId) {
-        this.cartId = cartId;
-    }
-
     public Customer getCustomer() {
         return customer;
     }

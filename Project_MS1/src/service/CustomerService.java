@@ -2,11 +2,15 @@ package service;
 
 import dao.CartDAO;
 import dao.CustomerDAO;
+import dao.ProductDAO;
 import entity.Cart;
 import entity.Customer;
 import entity.Gender;
 import java.util.Scanner;
 import service.ProductService;
+
+import static dao.ProductDAO.addProduct;
+import static dao.ProductDAO.findProductById;
 
 public class CustomerService {
     static Scanner scanner = new Scanner(System.in);
@@ -121,8 +125,9 @@ public class CustomerService {
             System.out.println("2. Add Balance");
             System.out.println("3. Update Profile");
             System.out.println("4. View Products");
-            System.out.println("5. View Cart");
-            System.out.println("6. Logout");
+            System.out.println("5. Add Product to Cart");
+            System.out.println("6. View Cart");
+            System.out.println("7. Logout");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
@@ -138,13 +143,18 @@ public class CustomerService {
                     updateProfile(customer);
                     break;
                 case 4:
-                    ProductService.productmenu(customer);
+                    viewAllProducts();
                     break;
                 case 5:
-                    Cart cart = CartDAO.findCartByCustomer(customer);
-                    CartDAO.displayCart(cart);
+                    System.out.print("Enter product ID to add: ");
+                    int productId = scanner.nextInt();
+                    Cart cart = new Cart(customer);
+                    CartDAO.addProduct(cart, findProductById(productId));
                     break;
                 case 6:
+                    CartDAO.displayCart(cart);
+                    break;
+                case 7:
                     System.out.println("You have successfully logged out.");
                     return;
                 default:
@@ -182,6 +192,9 @@ public class CustomerService {
 
         customer.updateProfile(firstName, lastName, address, phone, shippingAddress);
         System.out.println("Profile updated successfully!");
+    }
+    public static void viewAllProducts() {
+        ProductDAO.displayAllProducts();
     }
 
 
