@@ -1,29 +1,21 @@
 package service;
 
 import dao.ProductDAO;
+import entity.Customer;
+
+import java.util.Scanner;
 
 public class ProductService {
-
-    public static void productmenu(){
+    private static final Scanner scanner = new Scanner(System.in);
+    public static void productmenu(Customer customer){
         while (true) {
             System.out.println("Product Menu");
-            System.out.println("1. Add Product to cart");
-            System.out.println("2. Exit Product Menu");
             System.out.print("Enter choice: ");
             int choice = scanner.nextInt();
             scanner.nextLine();
-            switch (choice) {
-                case 1:
-                    addNewProduct();
-                    break;
-                case 4:
 
-                    return;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
-            }
+
         }
-
     }
 
 }

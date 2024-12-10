@@ -10,6 +10,7 @@ public class Database {
     public static ArrayList<Product> products = new ArrayList<>();
     public static ArrayList<Category> categories = new ArrayList<>();
     public static ArrayList<Order> orders = new ArrayList<>();
+    public static ArrayList<Cart> carts = new ArrayList<>();
 
     public static <T> void add(ArrayList<T> list, T item) {
         list.add(item);

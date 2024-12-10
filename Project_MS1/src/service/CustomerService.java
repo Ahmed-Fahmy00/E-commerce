@@ -1,10 +1,12 @@
 package service;
 
+import dao.CartDAO;
 import dao.CustomerDAO;
+import entity.Cart;
 import entity.Customer;
 import entity.Gender;
 import java.util.Scanner;
-import static service.ProductService;
+import service.ProductService;
 
 public class CustomerService {
     static Scanner scanner = new Scanner(System.in);
@@ -136,10 +138,11 @@ public class CustomerService {
                     updateProfile(customer);
                     break;
                 case 4:
-                    ProductService.productmenu();
+                    ProductService.productmenu(customer);
                     break;
                 case 5:
-                    viewCart(customer);
+                    Cart cart = CartDAO.findCartByCustomer(customer);
+                    CartDAO.displayCart(cart);
                     break;
                 case 6:
                     System.out.println("You have successfully logged out.");
@@ -180,5 +183,6 @@ public class CustomerService {
         customer.updateProfile(firstName, lastName, address, phone, shippingAddress);
         System.out.println("Profile updated successfully!");
     }
+
 
 }

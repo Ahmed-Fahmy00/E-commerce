@@ -9,8 +9,7 @@ import entity.Product;
 import java.util.Date;
 
 public class TestCases {
-
-    public static void main(String[] args) {
+    public static void te() {
 
         Customer customer1 = new Customer("John", "Doe", "johndoe", "john@example.com", Gender.MALE, "password123", "Customer", "123 Main St", "555-1234", "123 Main St", new Date());
         Customer customer2 = new Customer("Jane", "Smith", "janesmith", "jane@example.com", Gender.FEMALE, "password456", "Customer", "456 Elm St", "555-5678", "456 Elm St", new Date());

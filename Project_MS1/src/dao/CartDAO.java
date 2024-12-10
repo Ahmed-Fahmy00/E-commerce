@@ -2,9 +2,31 @@ package dao;
 
 import database.Database;
 import entity.Cart;
+import entity.Customer;
 import entity.Product;
 
 public class CartDAO {
+
+    public static void displayCart(Cart cart) {
+        if (cart.getProducts().isEmpty()) {
+            System.out.println("Cart is empty.");
+            return;
+        }
+        System.out.println("Products in Cart:");
+        for (int i = 0; i < cart.getProducts().size(); i++) {
+            Product product = cart.getProducts().get(i);
+            System.out.println(product.getName() + " - " + product.getPrice() + " x " + cart.getCount()[i]);
+        }
+    }
+
+    public static Cart findCartByCustomer(Customer customer) {
+        for (Cart cart : Database.carts) {
+            if (cart != null && (cart.getCustomer()).equals(customer) ) {
+                return cart;
+            }
+        }
+        return null;
+    }
 
     public void clearCart(Cart cart) {
         cart.getProducts().clear();
@@ -60,4 +82,13 @@ public class CartDAO {
             System.out.println("Product not found in the cart.");
         }
     }
+
+      public static double calculateTotalAmount(Cart cart) {
+        double total = 0;
+        for (int i = 0; i < cart.getProducts().size(); i++) {
+            total += cart.getProducts().get(i).getPrice() * cart.getCount()[i];
+        }
+        return total;
+    }
+
 }
