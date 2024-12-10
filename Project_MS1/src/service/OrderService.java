@@ -1,16 +1,37 @@
 package service;
 
 import dao.OrderDAO;
-
-import database.Database;
+import entity.Customer;
 import entity.Order;
 import entity.Product;
-
 import java.util.List;
+import java.util.Scanner;
 
 public class OrderService {
+    static Scanner scanner = new Scanner(System.in);
 
+    public static void orderMenu(Customer customer) {
+        while (true) {
+            System.out.println("\n--- Order Menu ---");
+            System.out.println("1. clear Orders");
+            System.out.println("2. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
+            switch (choice) {
+                case 1:
+                    OrderDAO.deleteOrdersByCustomerId(customer.getId());
+                    break;
+                case 2:
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+                    break;
+            }
+        }
+
+    }
 
     public void displayOrderDetails(Order order) {
         if (order == null) {
@@ -53,4 +74,5 @@ public class OrderService {
             System.out.println("Order not found. Cancellation failed.");
         }
     }
+
 }

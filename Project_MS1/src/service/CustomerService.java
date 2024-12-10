@@ -1,12 +1,10 @@
 package service;
 
-import dao.CartDAO;
 import dao.CustomerDAO;
 import entity.Cart;
 import entity.Customer;
 import entity.Gender;
 import java.util.Scanner;
-import service.ProductService;
 
 public class CustomerService {
     static Scanner scanner = new Scanner(System.in);
@@ -115,6 +113,7 @@ public class CustomerService {
     }
 
     public static void customerMenu(Customer customer) {
+        Cart cart = null; // Initialize the cart outside the loop for persistence
         while (true) {
             System.out.println("\n--- Customer Menu ---");
             System.out.println("1. View Personal Information");
@@ -122,10 +121,11 @@ public class CustomerService {
             System.out.println("3. Update Profile");
             System.out.println("4. View Products");
             System.out.println("5. View Cart");
-            System.out.println("6. Logout");
+            System.out.println("6. View Orders");
+            System.out.println("7. Logout");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
@@ -138,13 +138,15 @@ public class CustomerService {
                     updateProfile(customer);
                     break;
                 case 4:
-                    ProductService.productmenu(customer);
+                    ProductService.productmenu(cart);
                     break;
                 case 5:
-                    Cart cart = CartDAO.findCartByCustomer(customer);
-                    CartDAO.displayCart(cart);
+                    CartService.cartMenu(cart);
                     break;
                 case 6:
+                    OrderService.orderMenu(customer);
+                    break;
+                case 7:
                     System.out.println("You have successfully logged out.");
                     return;
                 default:
@@ -183,6 +185,5 @@ public class CustomerService {
         customer.updateProfile(firstName, lastName, address, phone, shippingAddress);
         System.out.println("Profile updated successfully!");
     }
-
 
 }

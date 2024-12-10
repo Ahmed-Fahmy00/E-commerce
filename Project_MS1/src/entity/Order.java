@@ -8,9 +8,10 @@ public class Order {
     private List<Product> products;
     private double totalAmount;
     private PaymentMethod paymentMethod;
+    private static int count= 1;
 
-    public Order(int orderId, Customer customer, List<Product> products, double totalAmount, PaymentMethod paymentMethod) {
-        this.orderId = orderId;
+    public Order(Customer customer, List<Product> products, PaymentMethod paymentMethod) {
+        this.orderId = count++;
         this.customer = customer;
         this.products = products;
         this.totalAmount = totalAmount;

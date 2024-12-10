@@ -1,5 +1,7 @@
 package entity;
 
+import dao.CartDAO;
+
 import java.util.Date;
 
 public class Customer extends User {
@@ -7,10 +9,11 @@ public class Customer extends User {
     private double balance;
     private static int counter=0;
     private int id;
+
     public Customer() {
         super();
-        this.balance = 0.0; // Initialize balance to 0
-
+        this.balance = 0.0;
+        CartDAO.createCart(this);
         this.id= counter++;
     }
     public Customer(String firstname, String lastname, String username, String email, Gender gender, String password, String role, String address, String phone, String shippingAddress, Date dateOfBirth) {

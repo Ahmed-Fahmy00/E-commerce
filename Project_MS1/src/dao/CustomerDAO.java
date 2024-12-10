@@ -20,7 +20,6 @@ public class CustomerDAO {
         return false;
     }
 
-
     public static Customer findCustomerByUsername(String username) {
         for (int i = 0; i < Database.customers.size(); i++) {
             Customer customer = Database.customers.get(i);
