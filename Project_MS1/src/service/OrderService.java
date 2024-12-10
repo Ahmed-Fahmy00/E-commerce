@@ -14,7 +14,7 @@ public class OrderService {
         while (true) {
             displayCustomerOrders(customer.getId());
             System.out.println("\n--- Order Menu ---");
-            System.out.println("1. clear Orders");
+            System.out.println("1. Clear Orders");
             System.out.println("2. Exit");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
@@ -39,18 +39,24 @@ public class OrderService {
             System.out.println("Order not found.");
             return;
         }
-        System.out.println("Order ID: " + order.getOrderId());
-        System.out.println("Customer: " + order.getCustomer().getFirstnameName() + " " + order.getCustomer().getLastnameName());
-        System.out.println("Payment Method: " + order.getPaymentMethod());
-        System.out.println("Products in Order:");
-        for (Product product : order.getProducts()) {
-            System.out.println(product.getName() + " - " + product.getPrice());
-        }
-        System.out.println("Total Amount: " + order.getTotalAmount());
-    }
 
-    public static void displayAllOrders() {
-        OrderDAO.displayAllOrders();
+        System.out.println("\n--- Order Details ---");
+        System.out.printf("Order ID: %d%n", order.getOrderId());
+        System.out.printf("Customer: %s %s%n",
+                order.getCustomer().getFirstnameName(),
+                order.getCustomer().getLastnameName());
+        System.out.printf("Payment Method: %s%n", order.getPaymentMethod());
+        System.out.println("Products in Order:");
+
+        if (order.getProducts().isEmpty()) {
+            System.out.println("  No products in this order.");
+        } else {
+            for (Product product : order.getProducts()) {
+                System.out.printf("  - %s%n", product.getName());  // Removed the quantity part
+            }
+        }
+        System.out.printf("Total: $%.2f%n", order.getTotalAmount());
+        System.out.println();
     }
 
     public static void displayCustomerOrders(int customerId) {
@@ -58,11 +64,10 @@ public class OrderService {
         List<Order> customerOrders = OrderDAO.findOrdersByCustomerId(customerId);
         if (customerOrders == null || customerOrders.isEmpty()) {
             System.out.println("No orders found for this customer.");
-            return ;
+            return;
         }
         for (Order order : customerOrders) {
             displayOrderDetails(order);
-            System.out.println("----------------------------");
         }
     }
 

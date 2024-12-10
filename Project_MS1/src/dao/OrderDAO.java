@@ -24,10 +24,10 @@ public class OrderDAO {
     }
 
     public static void createOrder(Cart cart) {
-
         Order order=new Order(cart.getCustomer(), cart.getProducts(),askForPaymentMethod());
         Database.orders.add(order);
         System.out.println("Order created successfully with ID: " + order.getOrderId());
+        System.out.println();
     }
 
     public static double calculateTotalAmount(Order order) {
@@ -96,9 +96,10 @@ public class OrderDAO {
     }
 
      public static PaymentMethod askForPaymentMethod() {
-        PaymentMethod paymentMethod = null;
+         System.out.println();
+         PaymentMethod paymentMethod = null;
         while (paymentMethod == null) {
-            System.out.println("Choose a payment method:");
+            System.out.println("Choose a payment method: ");
             for (PaymentMethod method : PaymentMethod.values()) {
                 System.out.println(method.ordinal() + 1 + ". " + method);
             }

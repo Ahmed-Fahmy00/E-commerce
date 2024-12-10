@@ -14,7 +14,6 @@ public class CustomerDAO {
         if (findCustomerByUsername(customer.getUsername()) == null) {
             CartDAO.createCart(customer);
             Database.customers.add(customer);
-            System.out.println("Customer added successfully.");
             return true;
         }
         System.out.println("Customer with the given username already exists.");

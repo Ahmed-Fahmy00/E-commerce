@@ -5,6 +5,8 @@ import dao.CustomerDAO;
 import entity.Cart;
 import entity.Customer;
 import entity.Gender;
+import main.Main;
+
 import java.util.Scanner;
 
 public class CustomerService {
@@ -120,9 +122,9 @@ public class CustomerService {
             System.out.println("1. View Personal Information");
             System.out.println("2. Add Balance");
             System.out.println("3. Update Profile");
-            System.out.println("4. View Products");
-            System.out.println("5. View Cart");
-            System.out.println("6. View Orders");
+            System.out.println("4. View Products Menu");
+            System.out.println("5. View Cart Menu");
+            System.out.println("6. View Orders Menu");
             System.out.println("7. Logout");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
@@ -149,7 +151,7 @@ public class CustomerService {
                     break;
                 case 7:
                     System.out.println("You have successfully logged out.");
-                    return;
+                    Main.MainMenu();
                 default:
                     System.out.println("Invalid choice. Please try again.");
             }

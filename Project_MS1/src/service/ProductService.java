@@ -12,8 +12,8 @@ public class ProductService {
     public static void productmenu(Cart cart) {
         while (true) {
             ProductDAO.displayAllProducts();
-            System.out.println("Product Menu");
-            System.out.println("1. Add product to cart");
+            System.out.println("-------- Product Menu --------");
+            System.out.println("1. Add product to the cart");
             System.out.println("2. Exit");
             System.out.print("Enter choice: ");
             int choice = scanner.nextInt();
@@ -21,7 +21,7 @@ public class ProductService {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter product index to add to cart: ");
+                    System.out.print("Enter product ID to be added: ");
                     int index = scanner.nextInt();
                     scanner.nextLine();
                     Product product = ProductDAO.findProductByindex(index);

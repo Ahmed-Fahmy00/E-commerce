@@ -8,7 +8,6 @@ public class ProductDAO {
     public static void addProduct(Product product) {
         if (findProductById(product.getProductId()) == null) {
             Database.products.add(product);
-            System.out.println("Product added successfully: " + product);
         } else {
             System.out.println("Product with ID " + product.getProductId() + " already exists.");
         }
@@ -74,6 +73,7 @@ public class ProductDAO {
             System.out.println("No products found in the database.");
             return;
         }
+        System.out.println();
         System.out.println("All Products:");
         for (Product product : Database.products) {
             if (product != null) {
@@ -84,5 +84,6 @@ public class ProductDAO {
                         product.getCategory());
             }
         }
+        System.out.println();
     }
 }

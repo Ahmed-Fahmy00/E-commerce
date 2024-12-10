@@ -7,7 +7,7 @@ import entity.Customer;
 import main.Main;
 import java.util.Scanner;
 
-public class UserService {
+public class UserService{
 
     private static final Scanner scanner = new Scanner(System.in);
 
