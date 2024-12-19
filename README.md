@@ -3,7 +3,7 @@
 >This is a project for FoE- ASU CSE241.
 
 # Team
--**Ahmed Mohamed fahmy**
+-Ahmed Mohamed fahmy
 -Ahmed Mohamed Naguib
 -Mohamed Ahmed Beder
 -Nour Essam Eldin
