@@ -1,5 +1,8 @@
-# E-commerce
-This is a java project about an E-commerce shopping program 
+## E-commerce
+E-commerce Desktop shopping Application.
+This is a project for FoE- ASU CSE241.
+
+
 
 # Team
 Ahmed Mohamed fahmy
