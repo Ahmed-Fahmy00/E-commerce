@@ -1,5 +1,6 @@
 ## E-commerce
->-E-commerce Desktop shopping Application.
+>E-commerce Desktop shopping Application.
+
 >This is a project for FoE- ASU CSE241.
 
 
