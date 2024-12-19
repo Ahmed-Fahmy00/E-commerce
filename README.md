@@ -3,102 +3,102 @@
 >**This is a project for FoE- ASU CSE241.**
 
 # Team
--Ahmed Mohamed fahmy 
--Ahmed Mohamed Naguib 
+-Ahmed Mohamed fahmy<br>
+-Ahmed Mohamed Naguib<br>
 -Mohamed Ahmed Beder<br>
 -Nour Essam Eldin<br>
 -Yousef Amr Said<br>
 
 # Files Structure
 
-src/main/java 
-├── main/ 
-│ └── ECommerceApp.java 
-├── Backend/ 
-│ ├── dao/ 
-│ │ ├── AdminDAO.java 
-│ │ ├── CartDAO.java 
-│ │ ├── CategoryDAO.java 
-│ │ ├── CustomerDAO.java 
-│ │ ├── OrderDAO.java 
-│ │ ├── ProductDAO.java 
-│ ├── entity/ 
-│ │ ├── Admin.java 
-│ │ ├── Cart.java 
-│ │ ├── Category.java 
-│ │ ├── Customer.java 
-│ │ ├── Gender.java 
-│ │ ├── Order.java 
-│ │ ├── PaymentMethod.java 
-│ │ ├── Product.java 
-│ │ ├── User.java 
-│ ├── service/ 
-│ │ ├── AdminService.java 
-│ │ ├── CartService.java 
-│ │ ├── CustomerService.java 
-│ │ ├── OrderService.java 
-│ │ ├── ProductService.java 
-│ │ ├── UserActions.java 
-│ │ ├── UserService.java 
-├── Database/ 
-│ ├── Database.java 
-├── test/ 
-│ ├── LoginControllerTest.java 
-│ ├── ShoppingCartControllerTest.java 
-│ ├── ProductDAOTest.java 
-│ ├── OrderDAOTest.java 
-│ ├── ValidationUtilsTest.java
-├── Frontend/ 
-│ ├── controllers/ 
-│ │ ├── admin/ 
-│ │ │ ├── AdminDashboardController.java 
-│ │ │ ├── ManageProductsController.java 
-│ │ │ ├── ManageUsersController.java 
-│ │ │ ├── ManageOrdersController.java 
-│ │ ├── authentication/ 
-│ │ │ ├── LoginController.java 
-│ │ │ ├── SignUpController.java 
-│ │ ├── user/ 
-│ │ │ ├── UserDashboardController.java 
-│ │ │ ├── EditProfileController.java 
-│ │ ├── product/ 
-│ │ │ ├── HomeController.java 
-│ │ │ ├── ProductListingController.java 
-│ │ │ ├── ProductSearchController.java 
-│ │ │ ├── ProductDetailsController.java 
-│ │ ├── cart/ 
-│ │ │ ├── ShoppingCartController.java 
-│ │ ├── checkout/ 
-│ │ │ ├── OrderReviewController.java 
-│ │ │ ├── OrderConfirmationController.java 
-│ │ │ ├── OrderHistoryController.java 
-│ │ │ ├── OrderDetailsController.java 
-├── resources/Frontend/ 
-│ ├── Images/ 
-│ ├── Icons/ 
-│ ├── CSS/ 
-│ │ ├── Styles.css
-│ ├── pages/ 
-│ │ ├── admin/ 
-│ │ │ ├── ManageProductsPage.java 
-│ │ │ ├── ManageUsersPage.java 
-│ │ │ ├── ManageOrdersPage.java 
-│ │ ├── authentication/ 
-│ │ │ ├── LoginPage.java 
-│ │ │ ├── SignUpPage.java 
-│ │ ├── user/ 
-│ │ │ ├── EditProfilePage.java 
-│ │ │ ├── OrderHistoryPage.java 
-│ │ │ ├── OrderDetailsPage.java 
-│ │ ├── product/ 
-│ │ │ ├── HomePage.java 
-│ │ │ ├── ProductListingPage.java 
-│ │ │ ├── ProductSearchPage.java 
-│ │ │ ├── ProductDetailsPage.java 
-│ │ ├── cart/ 
-│ │ │ ├── ShoppingCartPage.java 
-│ │ ├── checkout/ 
-│ │ │ ├── OrderReviewPage.java 
-│ │ │ ├── OrderConfirmationPage.java 
-│ │ │ ├── OrderHistoryController.java 
-│ │ │ ├── OrderDetailsController.java 
+src/main/java <br>
+├── main/ <br>
+│ └── ECommerceApp.java <br>
+├── Backend/ <br>
+│ ├── dao/ <br>
+│ │ ├── AdminDAO.java <br>
+│ │ ├── CartDAO.java <br>
+│ │ ├── CategoryDAO.java <br>
+│ │ ├── CustomerDAO.java <br>
+│ │ ├── OrderDAO.java <br>
+│ │ ├── ProductDAO.java <br>
+│ ├── entity/ <br>
+│ │ ├── Admin.java <br>
+│ │ ├── Cart.java <br>
+│ │ ├── Category.java <br>
+│ │ ├── Customer.java <br>
+│ │ ├── Gender.java <br>
+│ │ ├── Order.java <br>
+│ │ ├── PaymentMethod.java <br>
+│ │ ├── Product.java <br>
+│ │ ├── User.java <br>
+│ ├── service/ <br>
+│ │ ├── AdminService.java <br>
+│ │ ├── CartService.java <br>
+│ │ ├── CustomerService.java <br>
+│ │ ├── OrderService.java <br>
+│ │ ├── ProductService.java <br>
+│ │ ├── UserActions.java <br>
+│ │ ├── UserService.java <br>
+├── Database/ <br>
+│ ├── Database.java <br>
+├── test/ <br>
+│ ├── LoginControllerTest.java <br>
+│ ├── ShoppingCartControllerTest.java <br>
+│ ├── ProductDAOTest.java <br>
+│ ├── OrderDAOTest.java <br>
+│ ├── ValidationUtilsTest.java<br>
+├── Frontend/ <br>
+│ ├── controllers/ <br>
+│ │ ├── admin/ <br>
+│ │ │ ├── AdminDashboardController.java <br>
+│ │ │ ├── ManageProductsController.java <br>
+│ │ │ ├── ManageUsersController.java <br>
+│ │ │ ├── ManageOrdersController.java <br>
+│ │ ├── authentication/ <br>
+│ │ │ ├── LoginController.java <br>
+│ │ │ ├── SignUpController.java <br>
+│ │ ├── user/ <br>
+│ │ │ ├── UserDashboardController.java <br>
+│ │ │ ├── EditProfileController.java <br>
+│ │ ├── product/ <br>
+│ │ │ ├── HomeController.java <br>
+│ │ │ ├── ProductListingController.java <br>
+│ │ │ ├── ProductSearchController.java <br>
+│ │ │ ├── ProductDetailsController.java <br>
+│ │ ├── cart/ <br>
+│ │ │ ├── ShoppingCartController.java <br>
+│ │ ├── checkout/ <br>
+│ │ │ ├── OrderReviewController.java <br>
+│ │ │ ├── OrderConfirmationController.java <br>
+│ │ │ ├── OrderHistoryController.java <br>
+│ │ │ ├── OrderDetailsController.java <br>
+├── resources/Frontend/ <br>
+│ ├── Images/ <br>
+│ ├── Icons/ <br>
+│ ├── CSS/ <br>
+│ │ ├── Styles.css<br>
+│ ├── pages/ <br>
+│ │ ├── admin/ <br>
+│ │ │ ├── ManageProductsPage.java <br>
+│ │ │ ├── ManageUsersPage.java <br>
+│ │ │ ├── ManageOrdersPage.java <br>
+│ │ ├── authentication/ <br>
+│ │ │ ├── LoginPage.java <br>
+│ │ │ ├── SignUpPage.java <br>
+│ │ ├── user/ <br>
+│ │ │ ├── EditProfilePage.java <br>
+│ │ │ ├── OrderHistoryPage.java <br>
+│ │ │ ├── OrderDetailsPage.java <br>
+│ │ ├── product/ <br>
+│ │ │ ├── HomePage.java <br>
+│ │ │ ├── ProductListingPage.java <br>
+│ │ │ ├── ProductSearchPage.java <br>
+│ │ │ ├── ProductDetailsPage.java <br>
+│ │ ├── cart/ <br>
+│ │ │ ├── ShoppingCartPage.java <br>
+│ │ ├── checkout/ <br>
+│ │ │ ├── OrderReviewPage.java <br>
+│ │ │ ├── OrderConfirmationPage.java <br>
+│ │ │ ├── OrderHistoryController.java <br>
+│ │ │ ├── OrderDetailsController.java <br>
