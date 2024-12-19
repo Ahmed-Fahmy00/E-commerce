@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="aaf4edc3-e15e-44d1-b437-48f0d90c7cb5" name="Changes" comment="e">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/javafx_swt.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/css/Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/css/Styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/icons/cart.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/icons/cart.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/icons/left-arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/icons/left-arrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/icons/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/icons/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/icons/message.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/icons/message.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/icons/notification.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/icons/notification.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/icons/order.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/icons/order.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/icons/right-arrow.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/icons/right-arrow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/icons/searchicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/icons/searchicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/icons/user.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/icons/user.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/images/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/images/11.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/images/LOGO.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/images/LOGO.jfif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/images/loginbg.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/images/loginbg.jfif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/admin/AdminDashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/admin/AdminDashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/admin/ManageOrdersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/admin/ManageOrdersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/admin/ManageProductsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/admin/ManageProductsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/admin/ManageUsersPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/admin/ManageUsersPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/authentication/LOGO.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/authentication/LOGO.jfif" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/authentication/LoginPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/authentication/LoginPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/authentication/SignUpPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/authentication/SignUpPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/cart/ShoppingCartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/cart/ShoppingCartPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/checkout/OrderConfirmationPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/checkout/OrderConfirmationPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/checkout/OrderDetailsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/checkout/OrderDetailsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/checkout/OrderHistoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/checkout/OrderHistoryPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/checkout/OrderReviewPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/checkout/OrderReviewPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/headerFooterCss/Screenshot 2024-12-11 214454.png" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/headerFooterCss/Screenshot 2024-12-11 214454.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/headerFooterCss/Styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/headerFooterCss/Styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/headerFooterCss/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/headerFooterCss/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/product/Productmenu.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/product/Productmenu.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/product/card.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/product/card.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/user/EditProfilePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/user/EditProfilePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/Frontend/pages/user/UserDashboardPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/Frontend/pages/user/UserDashboardPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/E-commerce/run/project_ms2/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/Project_MS2/out/production/E-commerce/run/project_ms2/hello-view.fxml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Ahmed-Fahmy00"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Ahmed-Fahmy00/E-commerce.git",
+    "accountId": "d0d9347e-6723-4605-9bb3-cf8e5afb5247"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 0
+}]]></component>
+  <component name="ProjectId" id="2qRt4soTrvX0TepMU5Ld6j5rMb8" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Program Files/JetBrains/javafx-sdk-23.0.1/lib/javafx.media.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.33563218",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.22562.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-IU-243.22562.145" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aaf4edc3-e15e-44d1-b437-48f0d90c7cb5" name="Changes" comment="" />
+      <created>1734637027815</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734637027815</updated>
+      <workItem from="1734637029006" duration="383000" />
+    </task>
+    <task id="LOCAL-00001" summary="e">
+      <option name="closed" value="true" />
+      <created>1734637170214</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1734637170214</updated>
+    </task>
+    <task id="LOCAL-00002" summary="e">
+      <option name="closed" value="true" />
+      <created>1734637271918</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1734637271918</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="e" />
+    <option name="LAST_COMMIT_MESSAGE" value="e" />
+  </component>
+</project>
