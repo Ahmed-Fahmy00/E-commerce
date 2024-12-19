@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="704.0" prefWidth="989.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.controllers.authentication.LoginController">
+    <children>
+        <AnchorPane layoutX="304.0" layoutY="116.0" prefHeight="473.0" prefWidth="381.0" style="-fx-background-color: white;">
+            <children>
+                <Label layoutX="149.0" layoutY="119.0" style="-fx-text-fill: #000000;" text="Login">
+                    <font>
+                        <Font name="System Bold" size="36.0" />
+                    </font>
+                </Label>
+                <Circle fx:id="myCircle" fill="WHITE" layoutX="196.0" layoutY="42.0" radius="62.0" stroke="WHITE" strokeType="INSIDE" styleClass="exit" />
+                <FontAwesomeIcon glyphName="USERS" layoutX="141.0" layoutY="77.0" selectionFill="BLACK" size="100" />
+                <JFXButton layoutX="60.0" layoutY="330.0" prefHeight="53.0" prefWidth="271.0" style="-fx-background-color: #2962b3; -fx-cursor: hand; -fx-background-radius: 20px;" text="Login" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="22.0" />
+                    </font></JFXButton>
+                <HBox alignment="CENTER" layoutX="60.0" layoutY="201.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20;">
+                    <children>
+                        <FontAwesomeIcon glyphName="USER" size="25">
+                            <HBox.margin>
+                                <Insets left="9.0" />
+                            </HBox.margin>
+                        </FontAwesomeIcon>
+                        <TextField prefHeight="34.0" prefWidth="240.0" promptText="Email" style="-fx-background-color: transparent;" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" layoutX="61.0" layoutY="251.0" style="-fx-background-color: white; -fx-border-color: black; -fx-border-radius: 20;">
+                    <children>
+                        <FontAwesomeIcon glyphName="LOCK" size="25">
+                            <HBox.margin>
+                                <Insets left="9.0" />
+                            </HBox.margin>
+                        </FontAwesomeIcon>
+
+                        <PasswordField prefHeight="34.0" prefWidth="240.0" promptText="Password" style="-fx-background-color: transparent;">
+                            <font>
+                                <Font size="10.0" />
+                            </font>
+                        </PasswordField>
+                    </children>
+                </HBox>
+                <Hyperlink layoutX="168.0" layoutY="402.0" text="Sign Up" />
+                <Hyperlink layoutX="222.0" layoutY="300.0" text="Forgot Password" />
+                <JFXCheckBox checkedColor="#2962b3" layoutX="69.0" layoutY="303.0" text="Remember Me" textAlignment="RIGHT" />
+                <Circle fill="#1f93ff00" layoutX="195.0" layoutY="41.0" radius="66.0" stroke="#2962b3" strokeType="INSIDE" />
+
+            </children>
+        </AnchorPane>
+        <JFXButton layoutX="935.0" layoutY="14.0" minWidth="40.0" prefHeight="36.0" prefWidth="40.0" styleClass="exit" stylesheets="@../../css/Styles.css">
+            <graphic>
+                <FontAwesomeIcon glyphName="CLOSE" selectionStart="0" size="20" />
+            </graphic>
+        </JFXButton>
+    </children>
+    <stylesheets>
+        <URL value="@../../css/Styles.css" />
+        <URL value="@../../css/Styles.css" />
+    </stylesheets>
+</AnchorPane>
