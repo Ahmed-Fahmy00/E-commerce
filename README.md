@@ -1,6 +1,6 @@
 ## E-commerce
->E-commerce Desktop shopping Application.
->This is a project for FoE- ASU CSE241.
+**E-commerce Desktop shopping Application.**
+**This is a project for FoE- ASU CSE241.**
 
 # Team
 -Ahmed Mohamed fahmy
