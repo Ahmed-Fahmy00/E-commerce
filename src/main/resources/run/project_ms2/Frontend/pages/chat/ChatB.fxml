@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Frontend.controllers.chat.ClientController">
+<TextArea fx:id="textAreaAllChat" editable="false" prefColumnCount="20" prefHeight="314.0" prefRowCount="5" prefWidth="298.0" wrapText="true" />
+
+  <BorderPane>
+    <bottom>
+      <HBox prefHeight="79.0" prefWidth="298.0">
+        <TextArea fx:id="textAreaSendMessage" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="76.0" prefWidth="254.0" wrapText="true" />
+        <Button fx:id="buttonSend" onAction="#handleSendAction" prefHeight="107.0" prefWidth="43.0" text="Send" />
+      </HBox>
+    </bottom>
+  </BorderPane>
+</VBox>
