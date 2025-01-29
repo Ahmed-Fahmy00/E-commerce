@@ -8,7 +8,7 @@ import Backend.entity.Customer;
 import Backend.entity.Enum.PaymentMethod;
 import Backend.entity.Order;
 import Backend.entity.Product;
-import Database.Database;
+
 
 import java.util.ArrayList;
 
@@ -36,12 +36,12 @@ public class CartService {
             return null;
         }
 
-        if (Database.carts == null) {
+        if (cartDAO.getAll() == null) {
             System.out.println("Error: The carts list is not initialized.");
             return null;
         }
 
-        for (Cart cart : Database.carts) {
+        for (Cart cart : cartDAO.getAll()) {
             if (cart != null && cart.getCustomer() != null && cart.getCustomer().getUsername().equals(customer.getUsername())) {
                 System.out.println("Cart found.");
                 return cart;

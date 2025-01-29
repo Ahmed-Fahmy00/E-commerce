@@ -1,12 +1,9 @@
 package Backend.entity;
 
-import Backend.dao.CartDAO;
-import Backend.entity.Enum.Gender;
-import Database.Database;
 
+import Backend.entity.Enum.Gender;
 import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+
 
 public class Customer extends User {
     private String shippingAddress;
